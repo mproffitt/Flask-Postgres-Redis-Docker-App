@@ -7,5 +7,4 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./src
       - ./src:/docker-flask-app/src
