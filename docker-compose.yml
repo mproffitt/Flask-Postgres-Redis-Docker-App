@@ -1,0 +1,11 @@
+version: '2'
+services:
+  redis:
+    image: 'redis'
+  web:
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      - ./src
+      - ./src:/docker-flask-app/src
