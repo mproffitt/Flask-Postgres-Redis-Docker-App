@@ -8,3 +8,12 @@ services:
       - "80:80"
     volumes:
       - ./src:/docker-flask-app/src
+  dbase:
+    container_name: postgres
+    image: postgres:10
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=${USER}
+      - POSTGRES_PASSWORD=${PASSWORD}
+      - POSTGRES_DB=${DB}
