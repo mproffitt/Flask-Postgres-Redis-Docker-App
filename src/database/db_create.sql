@@ -12,4 +12,4 @@ CREATE TABLE prod.test_table (
 );
 
 INSERT INTO PROD.test_table (username, email) 
-VALUES ('karthik', 'mathur@gmail.com');
+VALUES ('uname', 'uname@domani.com');
