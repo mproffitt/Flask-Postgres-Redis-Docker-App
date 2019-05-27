@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
   redis:
     image: 'redis'
@@ -8,12 +8,14 @@ services:
       - "80:80"
     volumes:
       - ./src:/docker-flask-app/src
-  dbase:
+  postgres_db:
     container_name: postgres
     image: postgres:10
-    ports:
-      - "5432:5432"
     environment:
       - POSTGRES_USER=${USER}
-      - POSTGRES_PASSWORD=${PASSWORD}
-      - POSTGRES_DB=${DB}
+      - POSTGRES_PASSWORD=${PASSWORD} 
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./src/database/db_create.sql:/docker-entrypoint-initdb.d/init.sql
+         
