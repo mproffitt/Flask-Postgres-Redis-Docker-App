@@ -12,8 +12,4 @@ CREATE TABLE prod.test_table (
 );
 
 INSERT INTO PROD.test_table (username, email) 
-<<<<<<< HEAD
 VALUES ('km', 'email@xyz.com');
-=======
-VALUES ('uname', 'uname@domani.com');
->>>>>>> origin
