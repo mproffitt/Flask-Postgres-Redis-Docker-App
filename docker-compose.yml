@@ -3,6 +3,7 @@ services:
   redis:
     image: 'redis'
   web:
+    container_name: flask-app-prod
     build: .
     ports:
       - "80:80"
@@ -12,8 +13,8 @@ services:
     container_name: postgres
     image: postgres:10
     environment:
-      - POSTGRES_USER=${USER}
-      - POSTGRES_PASSWORD=${PASSWORD} 
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=password 
     ports:
       - "5432:5432"
     volumes:
