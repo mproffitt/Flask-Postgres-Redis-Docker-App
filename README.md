@@ -1,2 +1,2 @@
-# Flask-Redis-Docker-app
-Flask + Redis app using docker
+# Flask-Redis-Postgres-Docker-app
+Flask + Postgres + Redis app using docker

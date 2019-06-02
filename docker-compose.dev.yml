@@ -3,8 +3,10 @@ services:
   redis:
     image: 'redis'
   web:
-    container_name: flask-app-prod
-    build: .
+    container_name: flask-app-dev
+    build: 
+      dockerfile: Dockerfile.dev
+      context: .
     ports:
       - "80:80"
     volumes:
