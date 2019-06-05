@@ -2,12 +2,19 @@ from flask import Flask
 from flask import render_template, request, redirect, url_for
 from redis import Redis
 from sqlalchemy import create_engine
+from dotenv import find_dotenv, load_dotenv
 import os
 
 app = Flask(__name__)
 redis = Redis(host='redis', port=6379)
 
-db_engine = create_engine('postgresql+psycopg2://admin:password@postgres_db/case_db')
+load_dotenv(find_dotenv())
+username = os.getenv("USERNAME")
+password = os.getenv("PASSWORD")
+
+connection_str = "postgresql+psycopg2://{0}:{1}@postgres_db/case_db".format(username, password)
+
+db_engine = create_engine(connection_str)
 
 @app.route('/')
 def hello():
