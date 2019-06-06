@@ -13,8 +13,8 @@ services:
     container_name: postgres
     image: postgres:10
     environment:
-      - POSTGRES_USER=admin
-      - POSTGRES_PASSWORD=password 
+      - POSTGRES_USER=${USERNAME}
+      - POSTGRES_PASSWORD=${PASSWORD} 
     ports:
       - "5432:5432"
     volumes:
