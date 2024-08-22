@@ -4,7 +4,7 @@ services:
     image: 'redis'
   web:
     container_name: flask-app-dev
-    build: 
+    build:
       dockerfile: Dockerfile.dev
       context: .
     ports:
@@ -13,12 +13,11 @@ services:
       - ./src:/docker-flask-app/src
   postgres_db:
     container_name: postgres
-    image: postgres:10
+    image: postgres:14
     environment:
       - POSTGRES_USER=${USERNAME}
-      - POSTGRES_PASSWORD=${PASSWORD} 
+      - POSTGRES_PASSWORD=${PASSWORD}
     ports:
       - "5432:5432"
-    volumes:
-      - ./src/database/db_create.sql:/docker-entrypoint-initdb.d/init.sql
-         
+#    volumes:
+#      - ./src/database/db_create.sql:/docker-entrypoint-initdb.d/init.sql

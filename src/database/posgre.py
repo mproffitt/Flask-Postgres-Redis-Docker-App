@@ -12,4 +12,3 @@ def get_db_engine():
     db_engine = create_engine(connection_str)
 
     return db_engine
-

@@ -11,5 +11,4 @@ CREATE TABLE prod.test_table (
    email VARCHAR (155) UNIQUE NOT NULL
 );
 
-INSERT INTO PROD.test_table (username, email) 
-VALUES ('uname', 'uname@domain.com');
+INSERT INTO PROD.test_table (username, email) VALUES ('uname', 'uname@domain.com');

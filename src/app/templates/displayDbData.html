@@ -1,23 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Db Display</title>
-</head>
-<body>
-        {% for res in result %}
-            <p>The data from the Db is : {{ res }}  
-                <a href = "{{url_for('db_delete', name=res[0])}}">
-                    <input type="button" value="Delete">
-                </a>
-                <a href = "{{url_for('db_update', name=res[0])}}">
-                    <input type="button" value="Update">
-                </a>
-            </p>
-        {% endfor %}
+{% extends "base.html" %}
+{% block content %}
+{% block title %} Display Data {% endblock %}
+<p>The data from the Db is:</p>
+{% for res in result %}
+    <p>Name: {{res['username']}} Email: {{res['email']}}
+    <a href = "{{url_for('db_delete', name=res['username'])}}">
+        <input type="button" value="Delete">
+    </a>
+    <a href = "{{url_for('db_update', name=res['username'])}}">
+        <input type="button" value="Update">
+    </a>
+{% endfor %}
+</p>
 
-        <p><a href = "{{url_for('db_capture')}}"><input type="button" value="Capture More Data"/></a>
+<p><a href = "{{url_for('db_capture')}}"><input type="button" value="Capture More Data"/></a>
 
-        <p><a href = "{{url_for('hello')}}"><input type="button" value="Home Page"/></a>
-</body>
-</html>
+<p><a href = "{{url_for('hello')}}"><input type="button" value="Home Page"/></a>
+{% endblock %}

@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Count Display</title>
-</head>
-<body>
-    <p>Hello There ! This web page has been viewed {{ hits }} time(s) !</p>
-    <p><a href = "{{url_for('db_display')}}"><input type="button" value="Display Data"/></a>    <a href = "{{url_for('db_capture')}}"><input type="button" value="Add Data"/></a></p>
-</body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+{% block title %} Display Menu {% endblock %}
+<p>Hello There ! This web page has been viewed {{ hits }} time(s) !</p>
+<p>
+    <a href = "{{url_for('db_display')}}"><input type="button" value="Display Data"/></a>
+    <a href = "{{url_for('db_capture')}}"><input type="button" value="Add Data"/></a>
+</p>
+{% endblock %}
